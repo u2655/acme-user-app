@@ -17,9 +17,9 @@ steps:
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: gcloud
     args:
-      - run
-      - deploy
-      - $_SERVICE-NAME
+      - 'run'
+      - 'deploy'
+      - '$_SERVICE-NAME'
       - '--image'
       - '$_GCR_HOSTNAME/$PROJECT_ID/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA'
       - >-
