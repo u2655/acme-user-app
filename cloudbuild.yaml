@@ -38,4 +38,6 @@ substitutions:
   _SERVICE_NAME: acme-user-prod
   _DEPLOY_REGION: us-west1
   _LABELS: gcb-trigger-id=74f8c398-db50-4608-bb4f-08d46463eaf7
-tags: ['gcp-cloud-build-deploy-cloud-run', 'gcp-cloud-build-deploy-cloud-run-managed', 'acme-user-prod']
+tags:
+  - gcp-cloud-build-deploy-cloud-run
+  - gcp-cloud-build-deploy-cloud-run-managed
