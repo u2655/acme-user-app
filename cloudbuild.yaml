@@ -21,8 +21,7 @@ steps:
       - '$_DEPLOY_REGION'
       - '--quiet'
       - '--allow-unauthenticated'
-      - '--platform'
-      - 'managed'
+      - '--platform managed'
       - >-
       - '--set-env-vars=DB_USER=acme,DB_PASS=acme,DB_NAME=userdb,CLOUD_SQL_CONNECTION_NAME=acme-corp-352522:us-west1:acme-mysql'
       - >-
