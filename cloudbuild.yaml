@@ -1,10 +1,8 @@
 steps:
-  - name: gcr.io/k8s-skaffold/pack
-    args:
-      - build
-      - '$_GCR_HOSTNAME/$PROJECT_ID/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA'
-      - '--builder=gcr.io/buildpacks/builder:v1'
-      - '--network=cloudbuild'
-      - '--path=.'
-    id: Buildpack
+  - name: 'gcr.io/k8s-skaffold/pack'
     entrypoint: pack
+    args: ['build', '$_GCR_HOSTNAME/$PROJECT_ID/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA', '--builder=gcr.io/buildpacks/builder:v1', '--network=cloudbuild', '--path=.']
+    id: Buildpack
+    
+
+    
