@@ -32,7 +32,6 @@ images:
 options:
   substitutionOption: ALLOW_LOOSE
 substitutions:
-  _PLATFORM: managed
   _LABELS: gcb-trigger-id=96acd74b-0a7a-4fbe-acef-d1c805d13318
   _TRIGGER_ID: 96acd74b-0a7a-4fbe-acef-d1c805d13318
   _SERVICE_NAME: acme-user-prod
