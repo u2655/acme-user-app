@@ -2,13 +2,11 @@ steps:
   #Build step using buildpacks to create image
   - name: 'gcr.io/k8s-skaffold/pack'
     entrypoint: pack
-    args: ['build', '$_GCR_HOSTNAME/$PROJECT_ID/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA', '--builder=gcr.io/buildpacks/builder:v1', '--network=cloudbuild', '--path=.']
+    args: ['build', '$_GCR_HOSTNAME/$PROJECT_ID/$_SERVICE_NAME:$COMMIT_SHA', '--builder=gcr.io/buildpacks/builder:v1', '--network=cloudbuild', '--path=.']
     id: Buildpack
   #Push docker image to container registry
   - name: 'gcr.io/cloud-builders/docker'
-    args:
-      - push
-      - '$_GCR_HOSTNAME/$PROJECT_ID/$_SERVICE_NAME:$COMMIT_SHA'
+    args: ['push', '$_GCR_HOSTNAME/$PROJECT_ID/$_SERVICE_NAME:$COMMIT_SHA']
     id: Push
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:slim'
     entrypoint: gcloud
