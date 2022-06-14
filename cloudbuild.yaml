@@ -1,4 +1,4 @@
- steps:
+steps:
  # Build the container image
- - name: 'gcr.io/cloud-builders/docker'
-   args: ['build', '-t', 'gcr.io/acme-user-prod/acme-user-prod:$COMMIT_SHA', '.']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/acme-user-prod/acme-user-prod:$COMMIT_SHA', '.']
