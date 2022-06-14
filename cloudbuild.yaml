@@ -1,9 +1,11 @@
 steps:
+  #Build step using buildpacks to create image
   - name: 'gcr.io/k8s-skaffold/pack'
     entrypoint: pack
     args: ['build', '$_GCR_HOSTNAME/$PROJECT_ID/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA', '--builder=gcr.io/buildpacks/builder:v1', '--network=cloudbuild', '--path=.']
     id: Buildpack
-  - name: gcr.io/cloud-builders/docker
+  #Push docker image to container registry
+  - name: 'gcr.io/cloud-builders/docker'
     args:
       - push
       - '$_GCR_HOSTNAME/$PROJECT_ID/$_SERVICE_NAME:$COMMIT_SHA'
@@ -30,7 +32,7 @@ substitutions:
   _TRIGGER_ID: 96acd74b-0a7a-4fbe-acef-d1c805d13318
   _SERVICE_NAME: acme-user-prod
   _DEPLOY_REGION: us-west1
-  _GCR_HOSTNAME: us.gcr.io
+  _GCR_HOSTNAME: gcr.io
 tags:
   - gcp-cloud-build-deploy-cloud-run
   - gcp-cloud-build-deploy-cloud-run-managed
