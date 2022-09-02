@@ -1,0 +1,10 @@
+{
+  "deploymentId" : "2d1fc8c0-ca53-4a04-bf8c-7ac8f4a903b1",
+  "isResourceDeleted" : false,
+  "resourceMetadata" : {
+    "arn" : "arn:aws:proton:us-west-2:327050202254:environment/staging",
+    "templateArn" : "arn:aws:proton:us-west-2:327050202254:environment-template/my-environment",
+    "templateMajorVersion" : "1",
+    "templateMinorVersion" : "0"
+  }
+}
